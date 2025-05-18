@@ -1,0 +1,23 @@
+# ML Framework
+torch           # PyTorch base
+transformers      # Hugging Face Transformers
+datasets          # Dataset management
+accelerate        # Distributed training
+
+# Numerics
+numpy
+pandas
+scikit-learn
+
+# API
+fastapi
+uvicorn
+pydantic
+python-multipart
+
+# Utils
+python-dotenv
+tqdm
+loguru              # Modern logging
+faker
+spacy

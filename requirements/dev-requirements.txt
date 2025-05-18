@@ -1,0 +1,18 @@
+# Testing
+pytest
+pytest-cov
+ipython
+jupyter
+
+# Code Quality
+black              # Opinionated formatting
+ruff                # Blazing-fast linting
+mypy                # Static type checking
+
+# Experiment Tracking
+wandb              # Weights & Biases
+mlflow
+
+# Docs
+mkdocs
+mkdocs-material
