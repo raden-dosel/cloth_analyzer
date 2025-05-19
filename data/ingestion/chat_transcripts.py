@@ -1,10 +1,15 @@
 import csv
 import json
+import logging
 from pathlib import Path
 from typing import List, Dict, Union
+from jsonschema import ValidationError
 import pandas as pd
 from .base_loader import BaseDataLoader, DataRecord
 from ..validation.schema_validator import DataValidator
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 class ChatTranscriptLoader(BaseDataLoader):
     SUPPORTED_FORMATS = ['.csv', '.json', '.parquet']
