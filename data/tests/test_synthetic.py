@@ -1,6 +1,6 @@
 import pytest
-from data.synthetic.generator import SyntheticDataGenerator
-from data.synthetic.augmenter import DataAugmenter
+from data.generator.generator import SyntheticDataGenerator
+from data.generator.augmenter import DataAugmenter
 
 @pytest.fixture
 def generator():
