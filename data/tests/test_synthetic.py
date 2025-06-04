@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Adjust parent directory in sys.path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+
 import pytest
 from data.generator.generator import SyntheticDataGenerator
 from data.generator.augmenter import DataAugmenter
@@ -43,8 +51,24 @@ class TestDataAugmentation:
         augmented_attrs = augmented['attributes']
         
         # Verify core attributes remain
-        assert len(augmented_attrs['color']) >= len(original_attrs['color'])
-        assert len(augmented_attrs['material']) >= len(original_attrs['material'])
+        assert len(augmented_attrs['color_properties']) >= len(original_attrs['color_properties'])
+        assert len(augmented_attrs['color_orientation']) >= len(original_attrs['color_orientation'])
+        assert len(augmented_attrs['material_properties']) >= len(original_attrs['material_properties'])
+        assert len(augmented_attrs['pattern_properties']) >= len(original_attrs['pattern_properties'])
+        assert len(augmented_attrs['occasion']) >= len(original_attrs['occasion'])
+        assert len(augmented_attrs['style']) >= len(original_attrs['style'])
+        assert len(augmented_attrs['weather_suitability']) >= len(original_attrs['color_properties'])
+        assert len(augmented_attrs['fit']) >= len(original_attrs['color_orientation'])
+        assert len(augmented_attrs['embellishments']) >= len(original_attrs['material_properties'])
+        assert len(augmented_attrs['neckline']) >= len(original_attrs['pattern_properties'])
+        assert len(augmented_attrs['sleeve_length']) >= len(original_attrs['occasion'])
+        assert len(augmented_attrs['pants_length']) >= len(original_attrs['style'])
+        assert len(augmented_attrs['skirt_length']) >= len(original_attrs['color_properties'])
+        assert len(augmented_attrs['dress_length']) >= len(original_attrs['color_orientation'])
+        assert len(augmented_attrs['shirt_type']) >= len(original_attrs['material_properties'])
+        assert len(augmented_attrs['jacket_type']) >= len(original_attrs['pattern_properties'])
+        assert len(augmented_attrs['dress_type']) >= len(original_attrs['occasion'])
+        assert len(augmented_attrs['pants_type']) >= len(original_attrs['style'])
 
     def test_negation_handling(self, augmenter):
         text = "I want cotton shirts"

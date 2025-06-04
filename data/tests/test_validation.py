@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Adjust parent directory in sys.path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+
 import pytest
 from data.validation.schema_validator import DataValidator, DataSchema
 from data.validation.quality_checker import DataQualityChecker

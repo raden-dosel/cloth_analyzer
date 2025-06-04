@@ -1,6 +1,7 @@
 import torch
 import time
 import csv
+import numpy as np
 from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 

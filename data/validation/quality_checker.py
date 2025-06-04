@@ -1,3 +1,11 @@
+import os
+import sys
+
+# Adjust parent directory in sys.path
+parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if parent_dir not in sys.path:
+    sys.path.append(parent_dir)
+    
 import numpy as np
 from typing import List, Dict, Any
 import logging

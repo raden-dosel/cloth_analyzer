@@ -59,6 +59,7 @@ class TextCleaner:
         text = self.mention_re.sub('[USER]', text)
         text = self.hashtag_re.sub(r'\1', text)
         text = self.non_printable_re.sub(' ', text)
+        text = re.sub(r'!', '', text)  # Remove exclamation marks
         return text
 
     def _handle_special_patterns(self, text: str) -> str:
